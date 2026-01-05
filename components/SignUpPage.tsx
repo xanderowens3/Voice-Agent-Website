@@ -25,7 +25,7 @@ const BenefitItem = ({ icon: Icon, title, desc, isLast }: { icon: any, title: st
 const InputGroup = ({ label, value, onChange, placeholder, type = "text" }: { label: string, value: string, onChange: (v: string) => void, placeholder: string, type?: string }) => (
   <div className="flex flex-col gap-1">
     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-200/60 ml-1">{label}</label>
-    <input 
+    <input
       type={type}
       value={value}
       onChange={(e) => onChange(e.target.value)}
@@ -38,15 +38,13 @@ const InputGroup = ({ label, value, onChange, placeholder, type = "text" }: { la
 const OptionCard = ({ label, selected, onClick }: { label: string, selected: boolean, onClick: () => void }) => (
   <button
     onClick={onClick}
-    className={`group w-full p-4 rounded-xl border text-left transition-all duration-300 flex items-center gap-4 ${
-      selected 
-        ? 'bg-emerald-500 border-emerald-400 text-white shadow-lg' 
+    className={`group w-full p-4 rounded-xl border text-left transition-all duration-300 flex items-center gap-4 ${selected
+        ? 'bg-emerald-500 border-emerald-400 text-white shadow-lg'
         : 'bg-emerald-950/40 border-white/10 text-emerald-100/70 hover:border-emerald-400/50'
-    }`}
+      }`}
   >
-    <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
-      selected ? 'bg-white border-white text-emerald-600' : 'border-white/20 bg-emerald-950/60'
-    }`}>
+    <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${selected ? 'bg-white border-white text-emerald-600' : 'border-white/20 bg-emerald-950/60'
+      }`}>
       {selected && <Check size={12} strokeWidth={4} />}
     </div>
     <span className="font-medium text-sm">{label}</span>
@@ -73,7 +71,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
     finalGoal: ''
   });
 
-  const ltvOptions = ["Less than $1,000", "$1,000 – $5,000", "$5,000 – $15,000", "$15,000 – $50,000", "$50,000+"];
+  const ltvOptions = ["Less than £1,000", "£1,000 – £5,000", "£5,000 – £15,000", "£15,000 – £50,000", "£50,000+"];
   const patientOptions = ["0-10 new patients", "10-25 new patients", "25-50 new patients", "50-100 new patients", "100+ new patients"];
   const solutionOptions = ["No, we handle all calls in-house", "Yes, answering service ($200-$500/month)", "Yes, answering service ($500-$1,000/month)", "Yes, answering service ($1,000+/month)", "Yes, voicemail/basic after-hours system"];
   const challengeOptions = ["Missed calls during lunch/after-hours", "Staff too busy to answer during peak times", "Inconsistent booking experience", "High staffing costs or turnover", "Other"];
@@ -106,7 +104,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
       // Submit form data to webhook
       try {
         const webhookUrl = 'https://hook.eu2.make.com/2rwqaiv27lxnu71na199jcmsjwhcupwb';
-        
+
         // Prepare the data to send
         const submissionData = {
           firstName: formData.firstName,
@@ -165,7 +163,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
         </div>
 
         <h2 className="text-3xl md:text-4xl font-serif text-white italic mb-1">Success!</h2>
-        
+
         <div className="max-w-md space-y-1 mb-6">
           <p className="text-emerald-100 text-base leading-relaxed font-serif italic">
             Your request for early access has been received.
@@ -175,7 +173,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
           </p>
         </div>
 
-        <button 
+        <button
           onClick={() => onNavigate('home')}
           className="group relative px-6 py-3 bg-white text-emerald-950 rounded-xl text-sm font-bold shadow-2xl transition-all hover:scale-105 active:scale-95 flex items-center gap-2 overflow-hidden"
         >
@@ -197,7 +195,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white italic mb-4 leading-tight">Secure Your<br />Spot Now!</h2>
               <div className="w-16 h-1.5 bg-emerald-400 rounded-full mb-6" />
               <p className="text-emerald-100/70 text-sm mb-8 leading-relaxed max-w-md italic font-serif">If you’re interested in joining our exclusive beta program, please fill out the form below!</p>
-              
+
               <div className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <InputGroup label="First Name" value={formData.firstName} onChange={v => updateField('firstName', v)} placeholder="John" />
@@ -208,13 +206,12 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
                 <InputGroup label="Practice Website" value={formData.website} onChange={v => updateField('website', v)} placeholder="https://sunshinedental.com" />
               </div>
             </div>
-            
-            <button 
-              type="submit" 
+
+            <button
+              type="submit"
               disabled={!isStepValid()}
-              className={`w-full mt-8 py-5 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${
-                isStepValid() ? 'bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg shadow-emerald-500/20 text-lg' : 'bg-emerald-800 text-emerald-400/50 cursor-not-allowed text-lg'
-              }`}
+              className={`w-full mt-8 py-5 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${isStepValid() ? 'bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg shadow-emerald-500/20 text-lg' : 'bg-emerald-800 text-emerald-400/50 cursor-not-allowed text-lg'
+                }`}
             >
               Sign Up <Send size={20} />
             </button>
@@ -273,7 +270,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
                   </div>
                   {formData.biggestChallenge === 'Other' && (
                     <div className="mt-4 animate-fade-in">
-                      <textarea 
+                      <textarea
                         className="w-full bg-emerald-950/40 border border-white/20 rounded-xl p-4 text-white placeholder:text-emerald-800 focus:outline-none focus:border-emerald-400 transition-all h-24 text-sm"
                         placeholder="Tell us more about your challenge..."
                         value={formData.challengeOther}
@@ -291,7 +288,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
                   </div>
                   {formData.practiceType === 'Other' && (
                     <div className="mt-4 animate-fade-in">
-                      <input 
+                      <input
                         type="text"
                         className="w-full bg-emerald-950/40 border border-white/20 rounded-xl p-4 text-white placeholder:text-emerald-800 focus:outline-none focus:border-emerald-400 transition-all text-sm"
                         placeholder="Specify practice type..."
@@ -312,12 +309,11 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
               )}
             </div>
 
-            <button 
+            <button
               onClick={() => handleNext()}
               disabled={!isStepValid()}
-              className={`w-full mt-10 py-5 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${
-                isStepValid() ? 'bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg text-lg' : 'bg-emerald-800 text-emerald-400/50 cursor-not-allowed text-lg'
-              }`}
+              className={`w-full mt-10 py-5 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${isStepValid() ? 'bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg text-lg' : 'bg-emerald-800 text-emerald-400/50 cursor-not-allowed text-lg'
+                }`}
             >
               Next <ArrowRight size={20} />
             </button>
@@ -340,20 +336,19 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
 
             <div className="flex-1 flex flex-col">
               <h3 className="text-white text-xl font-serif font-normal leading-snug mb-6">7. If this worked out perfectly, what would be the result for your business?</h3>
-              <textarea 
+              <textarea
                 value={formData.finalGoal}
                 onChange={(e) => updateField('finalGoal', e.target.value)}
                 placeholder="Tell us about your ideal outcome..."
                 className="flex-1 min-h-[150px] bg-emerald-950/40 border border-white/10 rounded-xl px-6 py-5 text-white placeholder:text-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all resize-none mb-10 text-base"
               />
             </div>
-            
-            <button 
+
+            <button
               onClick={() => handleNext()}
               disabled={!isStepValid()}
-              className={`w-full py-5 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${
-                isStepValid() ? 'bg-emerald-400 hover:bg-emerald-300 text-emerald-950 shadow-xl scale-105 text-lg' : 'bg-emerald-800 text-emerald-400/50 cursor-not-allowed text-lg'
-              }`}
+              className={`w-full py-5 font-bold rounded-xl transition-all flex items-center justify-center gap-2 ${isStepValid() ? 'bg-emerald-400 hover:bg-emerald-300 text-emerald-950 shadow-xl scale-105 text-lg' : 'bg-emerald-800 text-emerald-400/50 cursor-not-allowed text-lg'
+                }`}
             >
               Finish Application <Check size={24} strokeWidth={3} />
             </button>
@@ -369,7 +364,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
       <div className={`w-full flex flex-col items-center ${isSubmitted ? 'justify-center py-6' : 'max-w-7xl mx-auto pt-32 pb-24'}`}>
         {!isSubmitted && (
           <div className="w-full">
-            <button 
+            <button
               onClick={handleBack}
               className="flex items-center gap-2 text-slate-400 hover:text-emerald-600 font-bold text-xs uppercase tracking-widest transition-colors mb-12 group"
             >
@@ -391,20 +386,20 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
                 </div>
 
                 <div className="space-y-2">
-                  <BenefitItem 
-                    icon={Globe} 
-                    title="Free Access" 
-                    desc="Use Iris completely free for 90 days during the beta period—no credit card required, no hidden fees" 
+                  <BenefitItem
+                    icon={Globe}
+                    title="Free Access"
+                    desc="Use Iris completely free for 90 days during the beta period—no credit card required, no hidden fees"
                   />
-                  <BenefitItem 
-                    icon={MessageSquare} 
-                    title="Lifetime Discount Lock-In" 
-                    desc="Beta participants receive 40% off standard pricing forever—even as rates increase for new customers" 
+                  <BenefitItem
+                    icon={MessageSquare}
+                    title="Lifetime Discount Lock-In"
+                    desc="Beta participants receive 40% off standard pricing forever—even as rates increase for new customers"
                   />
-                  <BenefitItem 
-                    icon={Zap} 
-                    title="Exclusive Feature Requests" 
-                    desc="Need a specific capability? Beta participants get first priority for custom features that matter to your practice" 
+                  <BenefitItem
+                    icon={Zap}
+                    title="Exclusive Feature Requests"
+                    desc="Need a specific capability? Beta participants get first priority for custom features that matter to your practice"
                     isLast={true}
                   />
                 </div>
@@ -415,7 +410,7 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
                 {/* The form container box */}
                 <div className="relative bg-emerald-900 rounded-[2.5rem] shadow-2xl border border-white/10 overflow-hidden flex flex-col h-full">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-800/40 via-transparent to-transparent opacity-50 pointer-events-none" />
-                  
+
                   <div key={step} className="flex-1 p-8 md:p-14 pt-12 relative z-10 animate-step-in flex flex-col h-full overflow-hidden">
                     {renderFormContent()}
                   </div>
@@ -427,20 +422,20 @@ const SignUpPage: React.FC<SignUpPageProps> = ({ onNavigate }) => {
 
         {isSubmitted && (
           <div className="max-w-2xl mx-auto w-full animate-fade-in flex flex-col items-center justify-center">
-             <div className="relative bg-emerald-900 rounded-[3rem] shadow-2xl border border-white/10 overflow-hidden min-h-[250px] w-full flex flex-col items-center justify-center p-6 md:p-8">
-               {/* Subtle grid pattern overlay */}
-               <div 
-                 className="absolute inset-0 opacity-[0.08] pointer-events-none" 
-                 style={{ 
-                   backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px)', 
-                   backgroundSize: '25px 25px' 
-                 }} 
-               />
-               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-800/40 via-transparent to-transparent opacity-50 pointer-events-none" />
-               <div className="relative z-10 w-full flex flex-col items-center justify-center">
-                 {renderSuccessBlock()}
-               </div>
-             </div>
+            <div className="relative bg-emerald-900 rounded-[3rem] shadow-2xl border border-white/10 overflow-hidden min-h-[250px] w-full flex flex-col items-center justify-center p-6 md:p-8">
+              {/* Subtle grid pattern overlay */}
+              <div
+                className="absolute inset-0 opacity-[0.08] pointer-events-none"
+                style={{
+                  backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px)',
+                  backgroundSize: '25px 25px'
+                }}
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-800/40 via-transparent to-transparent opacity-50 pointer-events-none" />
+              <div className="relative z-10 w-full flex flex-col items-center justify-center">
+                {renderSuccessBlock()}
+              </div>
+            </div>
           </div>
         )}
       </div>
