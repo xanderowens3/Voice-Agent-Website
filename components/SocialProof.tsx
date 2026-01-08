@@ -6,7 +6,7 @@ const SocialProof: React.FC = () => {
   const sources = [
     {
       source: "McKinsey & Company",
-      quote: "AI receptionists like Iris slash support costs by up to 30% and reduce response times by 90%, according to McKinsey's analysis.",
+      quote: "AI receptionists slash support costs by up to 30% and reduce response times by 90%, according to McKinsey's analysis.",
       impact: "Save thousands monthly on staffing while answering patient calls 90% faster."
     },
     {
@@ -41,8 +41,8 @@ const SocialProof: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {sources.map((item, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="group relative bg-white p-8 rounded-[2.5rem] border border-emerald-100 shadow-sm hover:shadow-2xl hover:shadow-emerald-900/5 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
             >
               {/* Quote Icon Decoration */}
