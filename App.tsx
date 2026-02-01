@@ -26,7 +26,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden selection:bg-emerald-200 selection:text-emerald-900">
+    <div className="relative min-h-screen overflow-x-hidden selection:bg-orange-500 selection:text-white text-slate-100">
       <AnimatedBackground />
       <Navbar onNavigate={handleNavigate} currentView={view} />
       <main>
