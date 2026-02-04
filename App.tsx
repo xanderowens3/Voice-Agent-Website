@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Comparison from './components/Comparison';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden selection:bg-orange-500 selection:text-white text-slate-100">
       <AnimatedBackground />
+      <Analytics />
       <Navbar onNavigate={handleNavigate} currentView={view} />
       <main>
         {view === 'home' ? (
